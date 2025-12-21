@@ -1,0 +1,12 @@
+.header {
+  padding: .8rem 2.5rem;
+  background-color: var(--black);
+  justify-content: space-between;
+  display: flex;
+}
+
+.btn {
+  height: 100%;
+  padding: 0 1rem;
+  border-radius: 100vw;
+}

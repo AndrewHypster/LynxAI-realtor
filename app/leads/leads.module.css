@@ -1,0 +1,31 @@
+.page {
+  height: 100%;
+  padding: 1rem;
+}
+
+.main {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: var(--black);
+}
+
+.top {
+  justify-items: center;
+  gap: 1rem;
+  display: grid;
+}
+
+.form {
+  width: 90%;
+  padding: .5rem 1rem;
+  max-width: 480px;
+  border: .1rem solid var(--white);
+  border-radius: 100vw;
+
+}
+
+.search {
+  width: 100%;
+  font-size: 1.2rem;
+}
