@@ -1,0 +1,111 @@
+.page {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.list {
+  margin-top: 4rem;
+  gap: 2rem;
+  justify-content: center;
+  display: flex;
+}
+
+.bot {
+  gap: 1rem;
+  justify-items: center;
+  display: grid;
+}
+
+.name {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.img {
+  height: fit-content;
+  border-radius: 100vw;
+}
+
+.img.active {
+  animation: active 5s infinite;
+}
+
+.checkWrap {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 25px;
+}
+
+/* приховуємо стандартний чекбокс */
+.checkWrap input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* фон-полоска */
+.checkSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+}
+
+/* кружечок */
+.checkSlider::before {
+  content: "";
+  position: absolute;
+  height: 21px;
+  width: 21px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+/* активний стан */
+.checkWrap input:checked + .checkSlider {
+  background-color: #4caf50;
+}
+
+.checkWrap input:checked + .checkSlider::before {
+  transform: translateX(25px); /* рухаємо кружечок вправо */
+}
+
+@keyframes active {
+  0% {
+    box-shadow: 0 0 0.5rem var(--green);
+  }
+  20% {
+    box-shadow: 0 0 1rem var(--green2);
+  }
+  40% {
+    box-shadow: 0 0 0.5rem var(--green3);
+  }
+  60% {
+    box-shadow: 0 0 1.5rem var(--yellow);
+  }
+  80% {
+    box-shadow: 0 0 1rem var(--blue);
+  }
+  95% {
+    box-shadow: 0 0 0.8rem var(--blue3);
+  }
+  100% {
+    box-shadow: 0 0 0.5rem var(--green);
+  }
+}

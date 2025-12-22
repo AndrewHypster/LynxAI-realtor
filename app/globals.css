@@ -51,3 +51,7 @@ a {
 li {
   list-style: none;
 }
+
+img {
+  line-height: 0;
+}

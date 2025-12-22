@@ -32,11 +32,13 @@ export default function Home() {
               <small>{session.data.user.email}</small>
             </div>
             <div className={style.btns}>
-              <Link href='/leads'>
+              <Link href="/leads">
                 <button className={style.btn}>Ліди</button>
               </Link>
 
-              <button className={style.btn}>Боти</button>
+              <Link href='/bots'>
+                <button className={style.btn}>Боти</button>
+              </Link>
             </div>
           </main>
         </div>

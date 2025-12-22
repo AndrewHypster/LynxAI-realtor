@@ -15,7 +15,7 @@
   width: 150px;
   max-width: 50vw;
   height: auto;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   aspect-ratio: 1 / 1;
   border-radius: 100vw;
   display: block;
@@ -27,15 +27,18 @@
   display: flex;
 }
 
+.btn {
+  padding: 0.5rem 2.5rem;
+  border-radius: 100vw;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 @media (max-width: 500px) {
   .btns {
     display: grid;
   }
-}
-
-.btn {
-  padding: .5rem 2.5rem;
-  border-radius: 100vw;
-  text-transform: uppercase;
-  font-weight: 600;
+  .btn {
+    width: 100%;
+  }
 }

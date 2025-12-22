@@ -7,7 +7,6 @@
   width: 90%;
   height: 100%;
   margin: 0 auto;
-  background-color: var(--black);
 }
 
 .top {
@@ -28,4 +27,109 @@
 .search {
   width: 100%;
   font-size: 1.2rem;
+}
+
+.list {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.item {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--black);
+}
+.item:nth-child(even) {
+  background-color: var(--black2);
+}
+
+.lead {
+  padding: .8rem;
+  border-radius: 1rem;
+  border: .1rem solid var(--gray);
+}
+
+.leadHeader {
+  position: relative;
+  align-items: baseline;
+  gap: 1rem;
+  display: flex;
+}
+
+.leadShow {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  right: .8rem;
+  transform: rotateZ(90deg);
+  border-radius: 100vw;
+}
+
+
+
+.leadCurrent .leadShow {
+  transform: rotateZ(-90deg);
+}
+
+.leadInfo {
+  height: 0rem;
+  overflow: hidden;
+}
+
+.leadCurrent .leadInfo {
+  height: 100%;
+}
+
+.leadProps {
+  margin: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.leadProp {
+  padding: .2rem 1rem;
+  border-radius: 100vw;
+  background-color: var(--perple);
+}
+
+.leadFooter {
+  margin-top: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.leadContact {
+  padding: 0 .5rem;
+  border-radius: 100vw;
+  color: var(--black);
+  background-color: var(--gray2);
+  align-items: center;
+  display: flex;
+}
+
+.leadContactImg {
+  width: 2rem;
+}
+
+.leadContactInfo {
+  width: 0rem;
+  overflow: hidden;
+  transition: all .8s;
+  display: grid;
+}
+
+.leadContact:hover .leadContactInfo {
+  width: 100%;
+  padding-left: .5rem;
+}
+
+@media (max-width: 500) {
+  .page {
+    padding: 0;
+  }
+  .leadHeader {
+    display: grid;
+  }
 }
