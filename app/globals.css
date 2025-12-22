@@ -18,6 +18,7 @@ html {
 }
 
 body {
+  width: 100dvw;
   height: 100dvh;
   overflow: hidden;
   grid-template-columns: auto 1fr;
@@ -55,7 +56,7 @@ img {
   line-height: 0;
 }
 
-.wraper {
+.wrapper {
   height: 100dvh;
   grid-template-rows: auto 1fr;
   display: grid;

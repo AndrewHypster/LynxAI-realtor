@@ -8,7 +8,7 @@ const LeadsPage = () => {
   const leads = [
     {
       type: "Заробітчанин",
-      date: "21-12-2025",
+      date: "21.12.2025",
       contacts: {
         phone: "0685325881",
         viber: "0685325881",
@@ -25,7 +25,7 @@ const LeadsPage = () => {
     },
     {
       type: "Переселенець",
-      date: "21-12-2025",
+      date: "21.12.2025",
       contacts: {
         phone: "0685325881",
       },
@@ -38,7 +38,7 @@ const LeadsPage = () => {
     },
     {
       type: "Заробітчанин",
-      date: "21-12-2025",
+      date: "21.12.2025",
       contacts: {
         phone: "0685325881",
         viber: "0685325881",
@@ -55,7 +55,7 @@ const LeadsPage = () => {
     },
     {
       type: "Переселенець",
-      date: "21-12-2025",
+      date: "21.12.2025",
       contacts: {
         phone: "0685325881",
       },
@@ -68,7 +68,7 @@ const LeadsPage = () => {
     },
     {
       type: "Заробітчанин",
-      date: "21-12-2025",
+      date: "21.12.2025",
       contacts: {
         phone: "0685325881",
         viber: "0685325881",
@@ -85,7 +85,7 @@ const LeadsPage = () => {
     },
     {
       type: "Переселенець",
-      date: "21-12-2025",
+      date: "21.12.2025",
       contacts: {
         phone: "0685325881",
       },
@@ -98,7 +98,7 @@ const LeadsPage = () => {
     },
     {
       type: "Заробітчанин",
-      date: "21-12-2025",
+      date: "21.12.2025",
       contacts: {
         phone: "0685325881",
         viber: "0685325881",
@@ -115,7 +115,7 @@ const LeadsPage = () => {
     },
     {
       type: "Переселенець",
-      date: "21-12-2025",
+      date: "21.12.2025",
       contacts: {
         phone: "0685325881",
       },
@@ -128,7 +128,7 @@ const LeadsPage = () => {
     },
     {
       type: "Заробітчанин",
-      date: "21-12-2025",
+      date: "21.12.2025",
       contacts: {
         phone: "0685325881",
         viber: "0685325881",
@@ -145,7 +145,757 @@ const LeadsPage = () => {
     },
     {
       type: "Переселенець",
-      date: "21-12-2025",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "1000000грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "1000000грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "1000000грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "1000000грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "1000000грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+      },
+      request: {
+        rooms: 2,
+        budget: "0грн",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Заробітчанин",
+      date: "21.12.2025",
+      contacts: {
+        phone: "0685325881",
+        viber: "0685325881",
+        telegram: "@Monoliz1503",
+        mail: "andrewgrechukh123@gmail.com",
+      },
+      request: {
+        rooms: 2,
+        budget: "100грн",
+        district: "Центр",
+      },
+      ai_summary:
+        "За запитом: купує дистанційно, готівка. Цікавить район Корбутівка, 2-кімнатна до 55к. Хоче поверх від 5 до 10. Новобудова",
+    },
+    {
+      type: "Переселенець",
+      date: "21.12.2025",
       contacts: {
         phone: "0685325881",
       },
@@ -185,7 +935,7 @@ const LeadsPage = () => {
       if (!response.ok) {
         // Логуємо статус помилки для діагностики
         setError(true);
-        throw new Error(
+         new Error(
           `Помилка від AI консультанта (Статус: ${response.status})`
         );
       }
@@ -223,7 +973,7 @@ const LeadsPage = () => {
     // 2. Встановлюємо поріг для пошуку (наприклад, 3 символи)
     if (newQuery.length < 3) {
       console.log("Запит занадто короткий. Очікуємо 3+ символи.");
-      setSearchResults(null);
+      setSearchResults(leads);
       return;
     }
 
@@ -246,83 +996,79 @@ const LeadsPage = () => {
 
   return (
     <div className={style.page}>
-        <div className={style.top}>
-          <h1>Список лідів</h1>
-          <form
-            className={style.form}
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
-          >
-            <input
-              onInput={handleChange}
-              className={style.search}
-              value={searchTerm}
-              type="text"
-              placeholder="фільтрація лідів"
-            />
-          </form>
-        </div>
+      <h1 style={{ position: "sticky" }}>123123</h1>
+      {/*  
+       <div className={style.top}>
+         <h1>Список лідів</h1>
+         <form
+           className={style.form}
+           onSubmit={(e) => {
+             e.preventDefault();
+           }}
+         >
+           <input
+             onInput={handleChange}
+             className={style.search}
+             value={searchTerm}
+             type="text"
+             placeholder="фільтрація лідів"
+           />
+         </form>
+       </div>*/}
 
-        <ul className={style.list}>
-          {searchResults.map((lead, k) => (
-            <li className={style.item} key={k}>
-              <div
-                className={`${style.lead} ${
-                  currentLead === k ? style.leadCurrent : ""
-                }`}
-              >
-                <header className={style.leadHeader}>
-                  <h3 className={style.leadType}>{lead.type}</h3>
-                  <small className={style.leadDate}>{lead.date}</small>
-                  <span className={style.leadBudget}>
-                    {lead.request.budget}
-                  </span>
-                  <button
-                    className={style.leadShow}
-                    onClick={(btn) =>
-                      setCurrentLead(currentLead === k ? null : k)
-                    }
-                  >
-                    {">"}
-                  </button>
-                </header>
-                <div className={style.leadInfo}>
-                  <div className={style.leadProps}>
-                    {Object.entries(lead.request).map(([key, value], k) => (
-                      <p className={style.leadProp} key={k}>
-                        <b>{key}: </b>
-                        {value}
-                      </p>
-                    ))}
-                  </div>
+      <table className={style.table}>
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox" />
+            </th>
+            <th>Тип ліда</th>
+            <th>Бюджет</th>
+            <th>Локація</th>
+            <th>Кімнат</th>
+            <th>Дата</th>
+            <th>Телефон</th>
+            <th>Телеграм</th>
+            <th>Вайбер</th>
+            <th>Пошта</th>
+            <th>Ше шось</th>
+            <th>Ше шось</th>
+            <th>Ше шось</th>
+            <th>Ше шось</th>
+            <th>Ше шось</th>
+            <th>Ше шось</th>
+            <th>Ше шось</th>
+            <th>Ше шось</th>
+          </tr>
+        </thead>
 
-                  <p>
-                    <b>AI висновок: </b>
-                    {lead.ai_summary}
-                  </p>
-                </div>
-                <footer className={style.leadFooter}>
-                  {Object.entries(lead.contacts).map(([key, value], k) => (
-                    <div className={style.leadContact} key={k}>
-                      <Image
-                        className={style.leadContactImg}
-                        src={`/imgs/icons/${key}.svg`}
-                        width={50}
-                        height={50}
-                        alt={key}
-                      />
-                      <p className={style.leadContactInfo}>
-                        <b>{key}: </b>
-                        {value}
-                      </p>
-                    </div>
-                  ))}
-                </footer>
-              </div>
-            </li>
+        <tbody>
+          {leads.map((lead, i) => (
+            <tr key={i}>
+              <td className={style.fixRow}>
+                <input type="checkbox" />
+              </td>
+              <td>{lead.type}</td>
+              <td>{lead.request.budget}</td>
+              <td>{lead.request.district}</td>
+              <td>{lead.request.rooms}</td>
+              <td>{lead.date}</td>
+              <td>{lead.contacts.phone}</td>
+              <td>{lead.contacts.telegram}</td>
+              <td>{lead.contacts.viber}</td>
+              <td>{lead.contacts.mail}</td>
+              <td>{lead.contacts.phone}</td>
+              <td>{lead.contacts.phone}</td>
+              <td>{lead.contacts.phone}</td>
+              <td>{lead.contacts.phone}</td>
+              <td>{lead.contacts.phone}</td>
+              <td>{lead.contacts.phone}</td>
+              <td>{lead.contacts.phone}</td>
+              <td>{lead.contacts.phone}</td>
+            </tr>
           ))}
-        </ul>
+        </tbody>
+      </table>
     </div>
   );
 };
