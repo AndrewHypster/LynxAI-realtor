@@ -246,7 +246,6 @@ const LeadsPage = () => {
 
   return (
     <div className={style.page}>
-      <main className={style.main}>
         <div className={style.top}>
           <h1>Список лідів</h1>
           <form
@@ -324,7 +323,6 @@ const LeadsPage = () => {
             </li>
           ))}
         </ul>
-      </main>
     </div>
   );
 };

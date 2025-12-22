@@ -26,35 +26,38 @@ const botsPage = () => {
         state: e.target.checked,
       },
     }));
-  }
+  };
 
   return (
     <div className={style.page}>
-      <main className={style.main}>
-        <h1 className={style.title}>Мої чат боти</h1>
+      <h1 className={style.title}>Мої чат боти</h1>
 
-        <ul className={style.list}>
-          {Object.entries(bots).map(([key, value], k) => (
-            <li className={style.bot} key={k}>
-              <div className={style.imgBox}>
-                <Image
-                  className={`${style.img} ${value.state? style.active : ''}`}
-                  src={value.img}
-                  width={100}
-                  height={100}
-                  alt={key}
-                />
-              </div>
-              <p className={style.name}>{key}</p>
+      <ul className={style.list}>
+        {Object.entries(bots).map(([key, value], k) => (
+          <li className={style.bot} key={k}>
+            <div className={style.imgBox}>
+              <Image
+                className={`${style.img} ${value.state ? style.active : ""}`}
+                src={value.img}
+                width={100}
+                height={100}
+                alt={key}
+              />
+            </div>
+            <p className={style.name}>{key}</p>
 
-              <label className={style.checkWrap}>
-                <input type="checkbox" checked={value.state} onClick={e => handle({name: key, e})} readOnly={true} />
-                <span className={style.checkSlider}></span>
-              </label>
-            </li>
-          ))}
-        </ul>
-      </main>
+            <label className={style.checkWrap}>
+              <input
+                type="checkbox"
+                checked={value.state}
+                onClick={(e) => handle({ name: key, e })}
+                readOnly={true}
+              />
+              <span className={style.checkSlider}></span>
+            </label>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

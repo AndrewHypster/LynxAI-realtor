@@ -7,8 +7,8 @@
 html {
   font-size: 16px;
   font-family: sans-serif;
-  background-color: var(--black2);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--black);
 }
 
 @media (max-width: 500px) {
@@ -18,8 +18,9 @@ html {
 }
 
 body {
-  min-height: 100dvh;
-  grid-template-rows: auto 1fr auto;
+  height: 100dvh;
+  overflow: hidden;
+  grid-template-columns: auto 1fr;
   display: grid;
 }
 
@@ -38,9 +39,7 @@ button {
 }
 
 button:hover {
-  color: var(--black2);
-  border: .08rem solid var(--white);
-  background-color: var(--white);
+  filter: brightness(1.1);
 }
 
 a {
@@ -54,4 +53,10 @@ li {
 
 img {
   line-height: 0;
+}
+
+.wraper {
+  height: 100dvh;
+  grid-template-rows: auto 1fr;
+  display: grid;
 }

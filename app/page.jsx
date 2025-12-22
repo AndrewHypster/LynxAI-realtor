@@ -31,15 +31,6 @@ export default function Home() {
               <h2>{session.data.user.name}</h2>
               <small>{session.data.user.email}</small>
             </div>
-            <div className={style.btns}>
-              <Link href="/leads">
-                <button className={style.btn}>Ліди</button>
-              </Link>
-
-              <Link href='/bots'>
-                <button className={style.btn}>Боти</button>
-              </Link>
-            </div>
           </main>
         </div>
       ) : (

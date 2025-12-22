@@ -8,7 +8,6 @@ const Header = () => {
 
   return (
     <header className={style.header}>
-      <Link href='/'><h2>Лого</h2></Link>
       {session?.data ? (
         <Link href="#" onClick={() => signOut({ callbackUrl: "/" })}>
           <button className={style.btn}>Вийти</button>

@@ -3,6 +3,7 @@ import "./globals.css";
 import './collors.css'
 import { Providers } from "@/components/Providers";
 import Header from "@/components/header";
+import Sidebar from "@/components/sidebar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,8 +19,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <Header />
-          <div className="wrapper">{children}</div>
+          <Sidebar />
+          <div className="wrapper">
+            <Header />
+            {children}
+          </div>
         </Providers>
       </body>
     </html>

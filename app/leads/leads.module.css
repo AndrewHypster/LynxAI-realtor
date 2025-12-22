@@ -1,11 +1,11 @@
 .page {
-  height: 100%;
-  padding: 1rem;
+  max-height: 91dvh;
+  overflow-y: scroll;
+  padding: 2rem;
 }
 
 .main {
   width: 90%;
-  height: 100%;
   margin: 0 auto;
 }
 
@@ -30,6 +30,7 @@
 }
 
 .list {
+  color: var(--white);
   max-width: 800px;
   margin: 2rem auto;
 }

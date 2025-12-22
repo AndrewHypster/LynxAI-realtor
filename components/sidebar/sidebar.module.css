@@ -1,0 +1,75 @@
+.sidebar {
+  position: relative;
+  max-width: 250px;
+  width: fit-content;
+  padding: 1rem;
+  background-color: var(--black2);
+  color: var(--white);
+}
+
+.closeBtn {
+  position:absolute;
+  width: 2rem;
+  height: 2rem;
+  top: 1rem;
+  right: 0;
+  background-color: var(--blue);
+  border-radius: 100vw;
+  border: none;
+  transform: translateX(50%);
+  transition: all .3s;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.sidebarOpen .closeBtn {
+  transform: translateX(50%) rotate(180deg);
+}
+
+.closeBtn img {
+  width: 90%;
+  height: 90%;
+  transform: rotateZ(180deg);
+  transition: all .3s;
+}
+
+.content {
+  width: 0;
+  overflow: hidden;
+}
+
+.list {
+  margin-top: 3rem;
+  gap: 1.5rem;
+  display: grid;
+}
+
+.item {
+  padding: .5rem 1rem;
+  border-radius: 100vw;
+  transition: all .3s;
+  align-items: baseline;
+  display: flex;
+}
+
+.item:hover {
+  background-color: var(--blue3);
+}
+
+.item img {
+  width: 1.5rem;
+  height: auto;
+}
+
+.itemName {
+  width: 0;
+  font-size: 1.2rem;
+  overflow: hidden;
+  transition: all .3s;
+}
+
+.sidebarOpen .itemName {
+  width: auto;
+  margin-left: 1rem;
+}
