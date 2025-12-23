@@ -9,10 +9,6 @@ import Link from "next/link";
 export default function Home() {
   const session = useSession();
 
-  useEffect(() => {
-    console.log("main page.jsx", session);
-  }, [session]);
-
   return (
     <>
       {session.data ? (
@@ -30,6 +26,7 @@ export default function Home() {
               )}
               <h2>{session.data.user.name}</h2>
               <small>{session.data.user.email}</small>
+              <p><b>Роль акаунту: </b>{session.data.user.role}</p>
             </div>
           </main>
         </div>

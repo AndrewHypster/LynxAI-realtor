@@ -29,11 +29,12 @@ export const authConfig: AuthOptions = {
           }),
         });
         const data = await resp.json();
-
+        
         if (!data.password) return null;
 
         if (data.password === credentials.password) {
           const { password, ...userWithoutPass } = data;
+          (userWithoutPass as any).sheetRole = data.role;
           return userWithoutPass as User;
         }
 
@@ -41,6 +42,9 @@ export const authConfig: AuthOptions = {
       },
     }),
   ],
+  session: {
+    strategy: "jwt",
+  },
   debug: true,
   callbacks: {
     async signIn({ user, account }) {
@@ -59,8 +63,6 @@ export const authConfig: AuthOptions = {
         });
 
         const data = await resp.json();
-        console.log('auth config', user);
-        
 
         // ❗ Якщо користувача нема в sheets — можна створити
         // або не пускати (повернути false)
@@ -85,18 +87,33 @@ export const authConfig: AuthOptions = {
               name: user.name,
               email: user.email,
               image: user.image,
-              password: '123'
+              password: "123",
+              role: "user",
             }),
           });
-          
+
           return true;
         }
 
         // Записуємо дані у token
-        (user as any).sheetUser = data;
+        (user as any).sheetRole = data.role;
       }
 
       return true;
+    },
+
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.role = (user as any).sheetRole || "user";
+      }
+      return token;
+    },
+
+    async session({ session, token }) {
+      session.user.id = token.id as string;
+      session.user.role = token.role as string;
+      return session;
     },
   },
 };
