@@ -5,6 +5,10 @@
   display: grid;
 }
 
+.main {
+  height: fit-content;
+}
+
 .title {
   font-size: 3rem;
 }

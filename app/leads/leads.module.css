@@ -17,16 +17,73 @@
 
 .form {
   width: 90%;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   max-width: 480px;
-  border: .1rem solid var(--white);
+  border: 0.1rem solid var(--white);
   border-radius: 100vw;
-
 }
 
 .search {
   width: 100%;
   font-size: 1.2rem;
+}
+
+.tableWrap {
+  position: relative;
+}
+
+.actionWrap {
+  position: sticky;
+  top: .5rem;
+  right: 0;
+  z-index: 2;
+  width: 100%;
+  height: 0;
+}
+
+.action {
+  width: 90%;
+  height: 2.5rem;
+  margin: 0 auto;
+  padding: .3rem 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--green3);
+  transform: translateY(-120%);
+  transition: all .3s;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  display: flex;
+}
+
+.actionOpen {
+  transform: translateY(0%);
+}
+
+.actionText {
+  font-weight: 600;
+  color: var(--white);
+}
+
+.actionBtns {
+  height: 100%;
+  gap: .4rem;
+  align-items: center;
+  display: flex;
+}
+
+.actionBtn {
+  height: 100%;
+  padding: .1rem .5rem;
+  border-radius: .4rem;
+  align-items: center;
+  gap: .2rem;
+  display: flex;
+}
+
+.actionBtn img {
+  height: 100%;
+  width: auto;
 }
 
 .table thead {
@@ -47,9 +104,16 @@
   border-bottom: 1px solid var(--black2);
 }
 
-.table tbody tr:hover td {
-  background-color: color-mix(in srgb, var(--blue3) 40%, var(--white) 60%) ;
-  transition: all .3s;
+.tableRow {
+  transition: all 0.3s;
+}
+
+.tableRow.active {
+  background-color: color-mix(in srgb, var(--blue3) 40%, var(--white) 60%);
+}
+
+.tableRow.checked {
+  background-color: color-mix(in srgb, var(--green) 40%, var(--white) 60%);
 }
 
 .fixRow {

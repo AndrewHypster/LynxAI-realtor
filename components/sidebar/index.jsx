@@ -20,7 +20,7 @@ const Sidebar = () => {
       </button>
       <ul className={style.list}>
         <Link href="/">
-          <li className={style.item} onClick={() => setOpen(!isOpen)}>
+          <li className={style.item}>
             <Image
               src="/imgs/icons/people.svg"
               width={20}
@@ -31,7 +31,7 @@ const Sidebar = () => {
           </li>
         </Link>
         <Link href="/bots">
-          <li className={style.item} onClick={() => setOpen(!isOpen)}>
+          <li className={style.item}>
             <Image
               src="/imgs/icons/people.svg"
               width={20}
@@ -42,7 +42,7 @@ const Sidebar = () => {
           </li>
         </Link>
         <Link href="/leads">
-          <li className={style.item} onClick={() => setOpen(!isOpen)}>
+          <li className={style.item}>
             <Image
               src="/imgs/icons/people.svg"
               width={20}
@@ -53,7 +53,7 @@ const Sidebar = () => {
           </li>
         </Link>
         <Link href="/leads">
-          <li className={style.item} onClick={() => setOpen(!isOpen)}>
+          <li className={style.item}>
             <Image
               src="/imgs/icons/people.svg"
               width={20}
@@ -64,7 +64,7 @@ const Sidebar = () => {
           </li>
         </Link>
         <Link href="/leads">
-          <li className={style.item} onClick={() => setOpen(!isOpen)}>
+          <li className={style.item}>
             <Image
               src="/imgs/icons/people.svg"
               width={20}
@@ -75,7 +75,7 @@ const Sidebar = () => {
           </li>
         </Link>
         <Link href="/leads">
-          <li className={style.item} onClick={() => setOpen(!isOpen)}>
+          <li className={style.item}>
             <Image
               src="/imgs/icons/people.svg"
               width={20}
