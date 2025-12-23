@@ -48,6 +48,7 @@
   padding: .5rem 1rem;
   border-radius: 100vw;
   transition: all .3s;
+  text-wrap: nowrap;
   align-items: baseline;
   display: flex;
 }
@@ -59,6 +60,16 @@
 .item img {
   width: 1.5rem;
   height: auto;
+  margin: 0 auto;
+  transition: all .3s;
+}
+.avatar {
+  align-items: center;
+}
+.avatar img {
+  height: 2.5rem;
+  width: auto;
+  border-radius: 100vw;
 }
 
 .itemName {
@@ -66,6 +77,10 @@
   font-size: 1.2rem;
   overflow: hidden;
   transition: all .3s;
+}
+
+.sidebarOpen .item img {
+  margin: 0;
 }
 
 .sidebarOpen .itemName {

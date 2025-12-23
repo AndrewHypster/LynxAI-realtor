@@ -102,6 +102,7 @@
 .table tbody td {
   padding: 12px;
   border-bottom: 1px solid var(--black2);
+  text-wrap: nowrap;
 }
 
 .tableRow {
@@ -120,4 +121,22 @@
   position: sticky;
   left: 0;
   background-color: var(--white);
+}
+
+.leadUnactive, .leadActive, .leadClosed {
+  padding: .5rem .4rem;
+  text-wrap: nowrap;
+  text-align: center;
+  border-radius: 2rem;
+  display: block;
+}
+
+.leadUnactive {
+  background-color: var(--gray2);
+} .leadActive {
+  color: var(--white);
+  background-color: var(--green);
+} .leadClosed {
+  color: var(--white);
+  background-color: var(--orange2);
 }

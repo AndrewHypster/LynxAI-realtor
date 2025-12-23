@@ -1,6 +1,7 @@
 import type { AuthOptions, User } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
+import { Role } from "@/types/next-auth";
 
 export const authConfig: AuthOptions = {
   providers: [
@@ -112,7 +113,7 @@ export const authConfig: AuthOptions = {
 
     async session({ session, token }) {
       session.user.id = token.id as string;
-      session.user.role = token.role as string;
+      session.user.role = token.role as Role;
       return session;
     },
   },
