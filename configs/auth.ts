@@ -46,7 +46,7 @@ export const authConfig: AuthOptions = {
   session: {
     strategy: "jwt",
   },
-  debug: true,
+  debug: false,
   callbacks: {
     async signIn({ user, account }) {
       // 🔥 Google login

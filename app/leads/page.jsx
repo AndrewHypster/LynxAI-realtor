@@ -2,7 +2,42 @@
 
 import style from "./leads.module.css";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+
+// без повного rerender таблиці
+const LeadRow = React.memo(function LeadRow({ lead, checked, onToggle }) {
+  return (
+    <tr className={`${style.tableRow} ${checked ? style.checked : ""}`}>
+      <td className={style.fixRow}>
+        <input
+          type="checkbox"
+          checked={checked}
+          onChange={(e) => onToggle(lead.id, e.target.checked)}
+        />
+      </td>
+
+      <td>{lead.type}</td>
+      <td>{lead.request.budget}</td>
+      <td>{lead.request.district}</td>
+      <td>{lead.request.rooms}</td>
+      <td>{lead.date}</td>
+      <td>{lead.contacts.phone}</td>
+      <td>{lead.contacts.telegram}</td>
+      <td>{lead.contacts.viber}</td>
+      <td>{lead.contacts.mail}</td>
+      <td>
+        <span className={style[lead.status.class]}>{lead.status.name}</span>
+      </td>
+      <td>{lead.contacts.phone}</td>
+      <td>{lead.contacts.phone}</td>
+      <td>{lead.contacts.phone}</td>
+      <td>{lead.contacts.phone}</td>
+      <td>{lead.contacts.phone}</td>
+      <td>{lead.contacts.phone}</td>
+      <td>{lead.contacts.phone}</td>
+    </tr>
+  );
+});
 
 const LeadsPage = () => {
   const leadsDB = [
@@ -1293,16 +1328,39 @@ const LeadsPage = () => {
   const [leads, setLeads] = useState(leadsDB);
   const [checkedRows, setCheckedRows] = useState(new Set());
 
-  useEffect(() => {
-    if (checkedRows.length > 0) {
-      console.log(checkedRows);
-    }
-  }, [checkedRows]);
-
   const delLeads = () => {
-    setLeads(leads.filter((lead) => !checkedRows.has(lead))); // залишаємо тільки не вибрані
-    setCheckedRows(new Set()); // очищаємо вибране
+    setLeads((prev) => prev.filter((lead) => !checkedRows.has(lead.id)));
+    setCheckedRows(new Set());
   };
+
+  const changeStatus = useCallback(
+    (status) => {
+
+      console.log(status);
+      
+      setLeads((prev) =>
+        prev.map((lead) =>
+          checkedRows.has(lead.id)
+            ? { ...lead, status }
+            : lead
+        )
+      );
+      setCheckedRows(new Set());
+    },
+    [checkedRows]
+  );
+
+  const toggleAll = (checked) => {
+    setCheckedRows(checked ? new Set(leads.map((l) => l.id)) : new Set());
+  };
+
+  const toggleRow = useCallback((id, checked) => {
+    setCheckedRows((prev) => {
+      const next = new Set(prev);
+      checked ? next.add(id) : next.delete(id);
+      return next;
+    });
+  }, []);
 
   return (
     <div className={style.page}>
@@ -1334,6 +1392,18 @@ const LeadsPage = () => {
           >
             <p className={style.actionText}>Обрано: {checkedRows.size}шт.</p>
             <div className={style.actionBtns}>
+              <button
+                className={style.actionBtn}
+                onClick={() => changeStatus({ class: 'leadActive', name: "OK" })}
+              >
+                <Image
+                  src="/imgs/icons/pencil.svg"
+                  width={30}
+                  height={30}
+                  alt="редагувати статус"
+                />
+                <p>Статус</p>
+              </button>
               <button className={style.actionBtn} onClick={delLeads}>
                 <Image
                   src="/imgs/icons/trash.svg"
@@ -1345,7 +1415,7 @@ const LeadsPage = () => {
               </button>
               <button
                 className={style.actionBtn}
-                onClick={() => setCheckedRows([])}
+                onClick={() => setCheckedRows(new Set())}
               >
                 <Image
                   src="/imgs/icons/x.svg"
@@ -1362,7 +1432,10 @@ const LeadsPage = () => {
           <thead>
             <tr>
               <th>
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  onChange={(inpt) => toggleAll(inpt.target.checked)}
+                />
               </th>
               <th>Тип ліда</th>
               <th>Бюджет</th>
@@ -1385,54 +1458,13 @@ const LeadsPage = () => {
           </thead>
 
           <tbody>
-            {leads.map((lead, k) => (
-              <tr
-                className={`${style.tableRow} ${
-                  checkedRows.has(lead) ? style.checked : ""
-                }`}
-                onMouseEnter={(e) =>
-                  e.currentTarget.classList.add(style.active)
-                }
-                onMouseLeave={(e) =>
-                  e.currentTarget.classList.remove(style.active)
-                }
-                key={k}
-              >
-                <td className={style.fixRow}>
-                  <input
-                    type="checkbox"
-                    checked={checkedRows.has(lead)}
-                    onChange={(e) => {
-                      setCheckedRows((prev) => {
-                        const copy = new Set(prev);
-                        e.target.checked ? copy.add(lead) : copy.delete(lead);
-                        return copy;
-                      });
-                    }}
-                  />
-                </td>
-                <td>{lead.type}</td>
-                <td>{lead.request.budget}</td>
-                <td>{lead.request.district}</td>
-                <td>{lead.request.rooms}</td>
-                <td>{lead.date}</td>
-                <td>{lead.contacts.phone}</td>
-                <td>{lead.contacts.telegram}</td>
-                <td>{lead.contacts.viber}</td>
-                <td>{lead.contacts.mail}</td>
-                <td>
-                  <span className={style[lead.status.class]}>
-                    {lead.status.name}
-                  </span>
-                </td>
-                <td>{lead.contacts.phone}</td>
-                <td>{lead.contacts.phone}</td>
-                <td>{lead.contacts.phone}</td>
-                <td>{lead.contacts.phone}</td>
-                <td>{lead.contacts.phone}</td>
-                <td>{lead.contacts.phone}</td>
-                <td>{lead.contacts.phone}</td>
-              </tr>
+            {leads.map((lead) => (
+              <LeadRow
+                key={lead.id}
+                lead={lead}
+                checked={checkedRows.has(lead.id)}
+                onToggle={toggleRow}
+              />
             ))}
           </tbody>
         </table>

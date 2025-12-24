@@ -1,12 +1,12 @@
+import {withApi} from '@/lib/with-api.ts'
 import { GoogleGenAI } from "@google/genai";
-import withAuth from "next-auth/middleware";
 import { NextResponse } from "next/server";
 
 // Ініціалізація AI (робіть це поза межами POST, щоб уникнути повторного ініціалізації)
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 const MODEL_NAME = "gemini-2.5-flash"; // Оптимальна модель для чату
 
-export const POST = withAuth(
+export const POST = withApi(
   async (req, ctx, session) => {
     try {
       const { search, searchData } = await req.json(); // Отримуємо всю історію з фронтенду
@@ -44,5 +44,5 @@ export const POST = withAuth(
       );
     }
   },
-  { requireAuth: true }
+  { requireAuth: true, roles: ['manager'] }
 );
