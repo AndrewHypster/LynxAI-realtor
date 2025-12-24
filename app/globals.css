@@ -6,7 +6,7 @@
 
 html {
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: var(--font-montserrat);
   background-color: var(--white);
   color: var(--black);
 }
@@ -34,6 +34,7 @@ button, input, textarea {
 
 button {
   border: .08rem solid var(--white);
+  font-family: var(--font-montserrat);
   font-size: 1rem;
   cursor: pointer;
   transition: all .3s;
@@ -44,6 +45,7 @@ button:hover {
 }
 
 a {
+  font-family: var(--font-montserrat);
   color: var(--white);
   text-decoration: none;
 }
@@ -60,4 +62,30 @@ img {
   height: 100dvh;
   grid-template-rows: auto 1fr;
   display: grid;
+}
+
+/* Весь скролбар */
+::-webkit-scrollbar {
+  width: .4rem
+}
+
+/* Трек (фон) */
+::-webkit-scrollbar-track {
+  background: transparent
+}
+
+/* Повзунок */
+::-webkit-scrollbar-thumb {
+  background: var(--gray);
+  border-radius: 100vw;
+}
+
+/* Повзунок при наведенні */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Куток */
+::-webkit-scrollbar-corner {
+  background: transparent;
 }

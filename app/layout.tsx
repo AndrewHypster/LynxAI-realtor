@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { montserrat } from "./fonts/fonts";
 import "./globals.css";
 import './collors.css'
 import { Providers } from "@/components/Providers";
@@ -16,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={montserrat.variable}>
       <body>
         <Providers>
           <Sidebar />

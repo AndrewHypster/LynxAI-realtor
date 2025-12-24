@@ -1,14 +1,11 @@
 "use client";
 import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
 import style from "./page.module.css";
 import Image from "next/image";
 import LoadingPage from "@/components/loading";
-import Link from "next/link";
 
 export default function Home() {
   const session = useSession();
-
   return (
     <>
       {session.data ? (

@@ -1362,8 +1362,12 @@ const LeadsPage = () => {
     });
   }, []);
 
+  const scroll = (e) => {
+    console.log(e.target.scrollLeft);
+  }
+
   return (
-    <div className={style.page}>
+    <div className={style.page} onScroll={scroll}>
       {/*  
        <div className={style.top}>
          <h1>Список лідів</h1>

@@ -93,7 +93,7 @@ const Sidebar = () => {
     byer: [
       {
         link: "/chat-ai",
-        img: "/imgs/icons/people.svg",
+        img: "/imgs/icons/chat-ai.svg",
         alt: "Чат AI",
         name: "Чат AI",
       },
