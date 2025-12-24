@@ -33,6 +33,12 @@ const Sidebar = () => {
         alt: "Ліди",
         name: "Ліди",
       },
+      {
+        link: "/chat-ai",
+        img: "/imgs/icons/chat-ai.svg",
+        alt: "Чат AI",
+        name: "Чат AI",
+      },
     ],
     manager: [
       {
