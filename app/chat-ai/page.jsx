@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import style from "./chat-ai.module.css";
 import Image from "next/image";
 
@@ -9,77 +9,10 @@ const chatAiPage = () => {
       role: "asist",
       text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
     },
-    {
-      role: "user",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "asist",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "user",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "asist",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "user",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "asist",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "user",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "asist",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "user",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "asist",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "user",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "asist",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "user",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "asist",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "user",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "asist",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
-    {
-      role: "user",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
-    },
   ]);
   const [text, setText] = useState("");
   const textareaRef = useRef(null);
+  const chatEndRef = useRef(null);
   const MAX_ROWS = 7;
 
   const handleChange = (e) => {
@@ -98,6 +31,19 @@ const chatAiPage = () => {
     textarea.style.height = Math.min(textarea.scrollHeight, maxHeight) + "px";
   };
 
+  const scrollToBottom = () => {
+    // Перевіряємо, чи існує елемент
+    chatEndRef.current?.scrollIntoView({
+      behavior: "smooth", // Додаємо плавний ефект прокрутки
+    });
+  };
+
+  useEffect(() => {
+    if (chat[chat.length - 1].role == "asist") {
+      
+    } else scrollToBottom();
+  }, [chat]);
+
   const submit = (e) => {
     e.preventDefault();
     console.log(e.target.formText.value);
@@ -108,6 +54,8 @@ const chatAiPage = () => {
         text: e.target.formText.value,
       },
     ]);
+    setText("");
+    textareaRef.current.style.height = "auto";
   };
   return (
     <div className={style.page}>
@@ -121,6 +69,7 @@ const chatAiPage = () => {
             {msg.text}
           </li>
         ))}
+        <div ref={chatEndRef} />
       </ul>
       <footer className={style.footer}>
         <form className={style.form} onSubmit={submit}>
@@ -134,7 +83,12 @@ const chatAiPage = () => {
             placeholder="Напиши повідомлення..."
           />
           <button className={style.send}>
-            <Image src="/imgs/icons/paper-plane.svg" width={30} height={30} />
+            <Image
+              src="/imgs/icons/paper-plane.svg"
+              width={30}
+              height={30}
+              alt="send msg"
+            />
           </button>
         </form>
       </footer>

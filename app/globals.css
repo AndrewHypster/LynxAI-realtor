@@ -64,28 +64,8 @@ img {
   display: grid;
 }
 
-/* Весь скролбар */
-::-webkit-scrollbar {
-  width: .4rem
-}
-
-/* Трек (фон) */
-::-webkit-scrollbar-track {
-  background: transparent
-}
-
-/* Повзунок */
-::-webkit-scrollbar-thumb {
-  background: var(--gray);
-  border-radius: 100vw;
-}
-
-/* Повзунок при наведенні */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* Куток */
-::-webkit-scrollbar-corner {
-  background: transparent;
+@media (max-width: 700px) {
+  body {
+    display: block;
+  }
 }

@@ -7,7 +7,7 @@
 }
 
 .closeBtn {
-  position:absolute;
+  position: absolute;
   width: 2rem;
   height: 2rem;
   top: 1rem;
@@ -16,7 +16,7 @@
   border-radius: 100vw;
   border: none;
   transform: translateX(50%);
-  transition: all .3s;
+  transition: all 0.3s;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -30,7 +30,7 @@
   width: 90%;
   height: 90%;
   transform: rotateZ(180deg);
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .content {
@@ -45,9 +45,9 @@
 }
 
 .item {
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 100vw;
-  transition: all .3s;
+  transition: all 0.3s;
   text-wrap: nowrap;
   align-items: baseline;
   display: flex;
@@ -61,7 +61,7 @@
   width: 1.5rem;
   height: auto;
   margin: 0 auto;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .avatar {
   align-items: center;
@@ -76,7 +76,7 @@
   width: 0;
   font-size: 1.2rem;
   overflow: hidden;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .sidebarOpen .item img {
@@ -86,4 +86,30 @@
 .sidebarOpen .itemName {
   width: auto;
   margin-left: 1rem;
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    position: absolute;
+    z-index: 100;
+    transform: translateX(-100%);
+    height: 100%;
+    width: fit-content;
+  }
+  .sidebarOpen {
+    transform: translateX(0%);
+  }
+  .closeBtn {
+    transform: translateX(120%);
+  }
+  .content {
+    width: fit-content;
+  }
+  .item img {
+    margin: 0;
+  }
+  .itemName {
+    width: auto;
+    margin-left: 1rem;
+  }
 }

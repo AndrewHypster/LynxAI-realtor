@@ -5,7 +5,12 @@ import Image from "next/image";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
 // без повного rerender таблиці
-const LeadRow = React.memo(function LeadRow({ lead, checked, onToggle }) {
+const LeadRow = React.memo(function LeadRow({
+  lead,
+  checked,
+  onToggle,
+  changeStatus,
+}) {
   return (
     <tr className={`${style.tableRow} ${checked ? style.checked : ""}`}>
       <td className={style.fixRow}>
@@ -26,7 +31,15 @@ const LeadRow = React.memo(function LeadRow({ lead, checked, onToggle }) {
       <td>{lead.contacts.viber}</td>
       <td>{lead.contacts.mail}</td>
       <td>
-        <span className={style[lead.status.class]}>{lead.status.name}</span>
+          <select
+            value={lead.status.class}
+            onChange={(e) => changeStatus(e, lead.id)}
+            className={style[lead.status.class]}
+          >
+            <option value="leadActive">Активний</option>
+            <option value="leadUnactive">Не активний</option>
+            <option value="leadClosed">Закритий</option>
+          </select>
       </td>
       <td>{lead.contacts.phone}</td>
       <td>{lead.contacts.phone}</td>
@@ -1243,112 +1256,20 @@ const LeadsPage = () => {
     },
   ];
 
-  const [searchTerm, setSearchTerm] = useState("");
-  const timeoutRef = useRef(null);
-  const SEARCH_DELAY_MS = 1000;
-
-  const [isLoading, setLoading] = useState(false);
-  const [isError, setError] = useState(false);
-  const [searchResults, setSearchResults] = useState(leadsDB); // знайдені пропозиції до запиту клієнта
-
-  const search = async (inpt) => {
-    // Не виконуємо запит, якщо поле пусте
-    if (!inpt) return;
-
-    try {
-      console.log(`>>> Виконую API-запит для: ${inpt}`);
-      setLoading(true);
-      const response = await fetch("/api/gemini-search", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          search: inpt,
-          searchData: leads,
-        }),
-      });
-
-      if (!response.ok) {
-        // Логуємо статус помилки для діагностики
-        setError(true);
-        new Error(`Помилка від AI консультанта (Статус: ${response.status})`);
-      }
-
-      const rawData = await response.json();
-      console.log(rawData);
-
-      const cleanData = rawData.text
-        .replace(/^```json\s*/, "") // прибрати початок ```json
-        .replace(/\s*```$/, "");
-
-      // Логіка для парсингу відповіді AI (зберігаємо вашу логіку)
-      const aiResponse = JSON.parse(cleanData);
-
-      console.log("Відповідь пошуку (JSON):", aiResponse);
-      setLoading(false);
-      setError(false);
-      setSearchResults(aiResponse);
-    } catch (error) {
-      setError(true);
-
-      console.error("Помилка під час спілкування з API:", error);
-    }
-  };
-
-  const handleChange = (e) => {
-    const newQuery = e.target.value;
-    setSearchTerm(newQuery);
-
-    // 1. Очищаємо попередній таймер
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
-    // 2. Встановлюємо поріг для пошуку (наприклад, 3 символи)
-    if (newQuery.length < 3) {
-      console.log("Запит занадто короткий. Очікуємо 3+ символи.");
-      setSearchResults(leads);
-      return;
-    }
-
-    // 3. Встановлюємо новий таймер для Debounce
-    timeoutRef.current = setTimeout(() => {
-      search(newQuery);
-    }, SEARCH_DELAY_MS);
-  };
-
-  // Очищення таймера при демонтажі компонента (важливо!)
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
-
   const [leads, setLeads] = useState(leadsDB);
   const [checkedRows, setCheckedRows] = useState(new Set());
+  const action = useRef(null);
+
+  const STATUS_MAP = {
+    leadActive: "Активний",
+    leadUnactive: "Не активний",
+    leadClosed: "Закритий",
+  };
 
   const delLeads = () => {
     setLeads((prev) => prev.filter((lead) => !checkedRows.has(lead.id)));
     setCheckedRows(new Set());
   };
-
-  const changeStatus = useCallback(
-    (status) => {
-
-      console.log(status);
-      
-      setLeads((prev) =>
-        prev.map((lead) =>
-          checkedRows.has(lead.id)
-            ? { ...lead, status }
-            : lead
-        )
-      );
-      setCheckedRows(new Set());
-    },
-    [checkedRows]
-  );
 
   const toggleAll = (checked) => {
     setCheckedRows(checked ? new Set(leads.map((l) => l.id)) : new Set());
@@ -1362,33 +1283,41 @@ const LeadsPage = () => {
     });
   }, []);
 
+  const changeStatus = (e, id) => {
+    const className = e.target.value;
+    setLeads((prev) =>
+      prev.map((lead) =>
+        lead.id === id
+          ? {
+              ...lead,
+              status: {
+                class: className,
+                name: STATUS_MAP[className],
+              },
+            }
+          : lead
+      )
+    );
+  };
+
+  const leftScroll = useRef(0);
+  const prevScroll = useRef(0);
   const scroll = (e) => {
-    console.log(e.target.scrollLeft);
-  }
+    if (!action.current) return;
+
+    const currentScroll = e.target.scrollLeft;
+    const delta = currentScroll - prevScroll.current;
+
+    leftScroll.current += delta;
+    prevScroll.current = currentScroll;
+
+    action.current.style.marginLeft = `${leftScroll.current}px`;
+  };
 
   return (
     <div className={style.page} onScroll={scroll}>
-      {/*  
-       <div className={style.top}>
-         <h1>Список лідів</h1>
-         <form
-           className={style.form}
-           onSubmit={(e) => {
-             e.preventDefault();
-           }}
-         >
-           <input
-             onInput={handleChange}
-             className={style.search}
-             value={searchTerm}
-             type="text"
-             placeholder="фільтрація лідів"
-           />
-         </form>
-       </div>*/}
-
       <div className={style.tableWrap}>
-        <div className={style.actionWrap}>
+        <div className={style.actionWrap} ref={action}>
           <div
             className={`${style.action} ${
               checkedRows.size > 0 ? style.actionOpen : ""
@@ -1396,18 +1325,6 @@ const LeadsPage = () => {
           >
             <p className={style.actionText}>Обрано: {checkedRows.size}шт.</p>
             <div className={style.actionBtns}>
-              <button
-                className={style.actionBtn}
-                onClick={() => changeStatus({ class: 'leadActive', name: "OK" })}
-              >
-                <Image
-                  src="/imgs/icons/pencil.svg"
-                  width={30}
-                  height={30}
-                  alt="редагувати статус"
-                />
-                <p>Статус</p>
-              </button>
               <button className={style.actionBtn} onClick={delLeads}>
                 <Image
                   src="/imgs/icons/trash.svg"
@@ -1468,6 +1385,7 @@ const LeadsPage = () => {
                 lead={lead}
                 checked={checkedRows.has(lead.id)}
                 onToggle={toggleRow}
+                changeStatus={changeStatus}
               />
             ))}
           </tbody>
