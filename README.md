@@ -1,1 +1,0 @@
-Відео по якому зроблено https://www.youtube.com/watch?v=fDesagJgw3w

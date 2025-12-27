@@ -2,12 +2,78 @@
 import { useEffect, useRef, useState } from "react";
 import style from "./chat-ai.module.css";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const chatAiPage = () => {
   const [chat, setChat] = useState([
     {
       role: "asist",
-      text: "Привіт, я ваш AI консультант!\nДопоможу вам з вибором нерухомості.",
+      blocks: [
+        { type: "text", content: "Я підібрав для вас варіанти 👇" },
+
+        {
+          type: "cards",
+          items: [
+            {
+              id: 1,
+              title: "Квартира в центрі",
+              price: "85 000 $",
+              img: "/imgs/flats/1.jpg",
+            },
+            {
+              id: 1,
+              title: "Квартира в центрі",
+              price: "85 000 $",
+              img: "/imgs/flats/2.jpg",
+            },
+            {
+              id: 1,
+              title: "Квартира в центрі",
+              price: "85 000 $",
+              img: "/imgs/flats/1.jpg",
+            },
+            {
+              id: 1,
+              title: "Квартира в центрі",
+              price: "85 000 $",
+              img: "/imgs/flats/2.jpg",
+            },
+            {
+              id: 1,
+              title: "Квартира в центрі",
+              price: "85 000 $",
+              img: "/imgs/flats/1.jpg",
+            },
+            {
+              id: 1,
+              title: "Квартира в центрі",
+              price: "85 000 $",
+              img: "/imgs/flats/2.jpg",
+            },
+            {
+              id: 1,
+              title: "Квартира в центрі",
+              price: "85 000 $",
+              img: "/imgs/flats/1.jpg",
+            },
+            {
+              id: 1,
+              title: "Квартира в центрі",
+              price: "85 000 $",
+              img: "/imgs/flats/2.jpg",
+            },
+          ],
+        },
+
+        {
+          type: "text",
+          content: "Хочете переглянути деталі або змінити фільтри?",
+        },
+      ],
+    },
+    {
+      role: "user",
+      blocks: [{ type: "text", content: "Супер!" }],
     },
   ]);
   const [text, setText] = useState("");
@@ -40,7 +106,6 @@ const chatAiPage = () => {
 
   useEffect(() => {
     if (chat[chat.length - 1].role == "asist") {
-      
     } else scrollToBottom();
   }, [chat]);
 
@@ -64,9 +129,56 @@ const chatAiPage = () => {
         <div className={style.headerHr}></div>
       </header>
       <ul className={style.chat}>
-        {chat.map((msg, k) => (
-          <li key={k} className={`${style[msg.role]} ${style.msg}`}>
-            {msg.text}
+        {chat.map((msg, i) => (
+          <li key={i} className={`${style[msg.role]} ${style.msg}`}>
+            {msg.blocks?.map((block, j) => {
+              if (block.type === "text") {
+                return (
+                  <p key={j} style={{ whiteSpace: "pre-line" }}>
+                    {block.content}
+                  </p>
+                );
+              }
+
+              if (block.type === "cards") {
+                return (
+                  <Swiper
+                    spaceBetween={12}
+                    slidesPerView="auto"
+                    freeMode
+                    className={style.slider}
+                    key={j}
+                  >
+                    {block.items.map((card, k) => (
+                      <SwiperSlide key={k} className={style.slide}>
+                        <div className={style.card}>
+                          <img
+                            src={card.img}
+                            alt={card.title}
+                            loading="lazy"
+                            className={style.cardImg}
+                          />
+                          <h4>{card.title}</h4>
+                          <span>{card.price}</span>
+                          <div
+                            style={{
+                              marginTop: '.5rem',
+                              display: "flex",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <button className={style.cardBtnGo}>Перейти</button>
+                            <button className={style.cardBtnStar}>★</button>
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                );
+              }
+
+              return null;
+            })}
           </li>
         ))}
         <div ref={chatEndRef} />
